@@ -1,0 +1,124 @@
+:root {
+
+    --is_dark_theme: false;
+
+    --c_bg_light : white;
+    --c_bg_dark : #1a1a1a;
+    --c_bg : var(--c_bg_light);
+
+    --c_bg_alt_light : #f0f0f0;
+    --c_bg_alt_dark : #141414;
+    --c_bg_alt : var(--c_bg_alt_light);
+
+    --c_button_edge_light : black;
+    --c_button_edge_dark : white;
+    --c_button_edge : var(--c_button_edge_light);
+
+    --c_button_face_light : #cecece;
+    --c_button_face_dark : #333333;
+    --c_button_face : var(--c_button_face_light);
+
+    --c_shadow_light : #00000088;
+    --c_shadow_dark : #ffffff55;   /* <- Dark theme shadows have a lower opacity */
+    --c_shadow : var(--c_shadow_light);
+
+    --c_text_light : #000000;
+    --c_text_dark : #fffff0;
+    --c_text : var(--c_text_light);
+
+    --c_text_alt_light : #444444;
+    --c_text_alt_dark : #999990;
+    --c_text_alt : var(--c_text_alt_light);
+
+    --c_need : #3F525C;
+
+    --c_need_hover_light : #2b3c45;
+    --c_need_hover_dark : #566973;
+    --c_need_hover : var(--c_need_hover_light);
+
+    }
+
+
+.dark-theme {
+
+    --is_dark_theme: true;
+
+    --c_bg: var(--c_bg_dark);
+    --c_bg_alt: var(--c_bg_alt_dark);
+    --c_button_edge: var(--c_button_edge_dark);
+    --c_button_face: var(--c_button_face_dark);
+    --c_shadow: var(--c_shadow_dark);
+    --c_text: var(--c_text_dark);
+    --c_text_alt: var(--c_text_alt_dark);
+    --c_need_hover: var(--c_need_hover_dark);
+    
+    }
+
+html {
+
+    background-color: var(--c_bg);
+
+    }
+
+.button-edge {
+
+    background-color: var(--c_button_edge);
+    
+    border: none;
+    display: inline-block;
+    margin:8px;
+    padding:4px;
+    border-radius: 50%;
+    user-select: none;
+
+    scale:1.00;
+    transition: 0.30s;
+
+    }
+
+.button-behind { 
+    
+    background-color: white;
+    border: none;
+    display: inline-block;
+    margin: auto;
+    border-radius: 50%;
+
+    }
+
+.button {
+
+    background-color: var(--c_button_face);
+    padding: 18px;
+    border-radius: inherit;
+
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+
+    text-shadow: 0 0 8px var(--c_shadow);
+
+    scale:1.50;
+
+    }
+
+.button:hover {
+
+    mix-blend-mode:difference;
+
+    cursor: pointer;
+
+    }
+.button-edge:has(.button:hover) {
+
+    scale:1.10;
+    transition : 0.10s;
+
+    }
+
+
+
+/* .button:hover {
+    /*background-color: var(--c_hover_dark);
+    mix-blend-mode:difference
+  } */

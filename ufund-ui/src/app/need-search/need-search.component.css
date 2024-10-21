@@ -1,0 +1,51 @@
+/* NeedSearch private styles */
+
+label {
+    display: block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+  
+  }
+  input {
+    padding: .5rem;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    display: block;
+  }
+  
+  input:focus {
+    outline: blue auto 1px;
+  }
+  
+  li {
+    list-style-type: none;
+  }
+  .search-result li a {
+    border-bottom: 1px solid var(--c_button_edge);
+    border-left: 1px solid var(--c_button_edge);
+    border-right: 1px solid var(--c_button_edge);
+    border-radius: 4px;
+    display: inline-block;
+    width: 100%;
+    max-width: 600px;
+    padding: .5rem;
+    box-sizing: border-box;
+    text-decoration: none;
+    background-color: var(--c_need);
+    align-content: left;
+    text-align: left;
+  }
+  
+  .search-result li a:hover {
+    
+    background-color: var(--c_need_hover);
+    color: white;
+  }
+  
+  ul.search-result {
+    margin-top: 0;
+    padding-left: 0;
+  }

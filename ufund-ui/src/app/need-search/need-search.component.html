@@ -1,0 +1,17 @@
+<div style="padding:1%" id="search-component">
+    <label style="color:var(--c_text)" for="search-box">Need Search</label>
+    <div style="display:flex;">
+      <app-help-icon></app-help-icon>&nbsp;&nbsp;&nbsp;<input #searchBox id="search-box" (input)="search(searchBox.value)" style="display:inline-block"/>
+    </div>
+
+    <ul class="search-result">
+      <li *ngFor="let need of needs$ | async" >
+        <a routerLink="/detail/{{need.id}}">
+          &nbsp;({{need.id}}) {{need.name}} x{{need.quantity}}
+        </a>
+
+        <div class="add-to-cart-button" *ngIf="parent.quantity_exceeds_bundle_limit(need) && !parent.is_admin();" style="text-decoration: line-through; opacity: 0.50; margin-left: 15px;">Add to Cart</div>
+        <div class="add-to-cart-button" *ngIf="!parent.quantity_exceeds_bundle_limit(need) && !parent.is_admin();" (click)="addToFundingBasket(need);" style="margin-left: 15px;">Add to Cart</div>
+      </li>
+    </ul>
+  </div>

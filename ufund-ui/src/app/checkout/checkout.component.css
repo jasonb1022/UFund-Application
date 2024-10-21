@@ -1,0 +1,205 @@
+.proceed-to-checkout-button {
+
+    background-color: var(--c_button_face);
+
+    border-radius: 8px;
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    font-size: 1.10rem;
+    font-weight: bold;
+
+    text-decoration: none;
+    text-align: center;
+
+    display: inline-block;
+    color: var(--c_text);
+
+
+    margin:0rem 0rem;
+    box-sizing: border-box;
+
+    /* flexbox */
+    order: 1;
+    flex: 0 1 auto;
+    align-self: center;
+
+    scale:1.00;
+    opacity:0.80;
+    transition: 0.50s;
+
+    }
+.proceed-to-checkout-button:hover {
+
+    scale: 1.10;
+    opacity: 1.00;
+    transition: 0.15s;
+
+    cursor: pointer;
+
+    }
+
+
+.overlay-background {
+    
+    position:fixed;
+    
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:9999;
+    
+    background-color:rgba(0, 0, 0, 0.67);
+    color:white;
+
+    justify-content: center;
+    align-items: center;
+
+    display: flex;
+
+    }
+
+.overlay-panel {
+
+    background-color: var(--c_bg_alt);
+
+    min-width: 50dvw;
+    max-width: 50dvw;
+    min-height: 50dvh;
+    max-height: 50dvh;
+
+    border-radius: 1dvw;
+
+    }
+
+.overlay-close-button {
+    
+    position:fixed;
+
+    margin-top: 30px;
+    margin-left: 30px;
+
+    background-color: var(--c_button_face);
+
+    border-radius: 50%;
+    font-size: 2.0rem;
+    text-decoration: none;
+    display: inline-flex;
+    color: var(--c_text);
+    text-align: center;
+    box-sizing: border-box;
+    width: 3rem;
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
+
+    user-select: none;
+
+
+    opacity:1.00;
+
+    mix-blend-mode:overlay;
+
+    margin-right: 1.0rem;
+
+    }
+
+.overlay-close-button:hover {
+
+    opacity:1.00;
+    
+    mix-blend-mode: normal;
+    cursor: pointer;
+    
+    }
+
+.confirmation-button {
+
+    position: fixed;
+    justify-self: center;
+    align-self: center;
+
+    margin-left:30dvw;
+    margin-top:35dvh;
+
+    background-color: var(--c_button_face);
+
+    border-radius: 8px;
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    max-width: 300px; 
+
+    font-size: 1.10rem;
+    font-weight: bold;
+
+    text-decoration: none;
+    text-align: center;
+
+    display: inline-block;
+    color: var(--c_text);
+
+    box-sizing: border-box;
+
+    order: 1;
+
+    scale:1.00;
+    opacity:0.80;
+    transition: 0.50s;
+
+    user-select: none;
+
+    }
+.confirmation-button:hover {
+
+    scale: 1.10;
+    opacity: 1.00;
+    transition: 0.15s;
+
+    cursor: pointer;
+
+    }
+
+.overlay-cart-items-display {
+
+    position: fixed; /* If you want it to be fixed, but it might need to be 'absolute' within the overlay-panel */
+    text-align: left;
+    padding: 1rem;
+    margin-top: 10dvh;
+    margin-left: 4.5dvh;
+
+
+    max-height: 325px;
+    min-width: 1000px;
+
+    overflow-y: auto;
+    direction: rtl;
+
+    }
+
+.overlay-cart-item {
+
+    direction: ltr;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.5rem;
+
+    }
+
+.overlay-total-cost {
+
+    position: fixed;
+    justify-self: center;
+    align-self: center;
+
+    margin-left:30dvw;
+    margin-top:25dvh;
+
+    }

@@ -1,0 +1,59 @@
+<app-checkout [parent]="this"></app-checkout>
+
+<div style="background-color:var(--c_bg_alt); padding:2%">
+  <h2>Recommended Needs<br><br></h2>
+  <div class="needs-menu">
+    <div class = "refresh-recommended" (click)="this.refreshRecommendedNeeds();">🔃</div>
+    <div *ngFor="let need of this.needsRecommended">
+      <div *ngIf="(username === 'admin'); else elseBlock">
+        <a routerLink="/detail/{{need.id}}">
+          {{need.name}}<br/>${{need.cost}}<br/>(x{{need.quantity}})
+        </a>
+      </div>
+      <ng-template #elseBlock>
+        <a>
+          {{need.name}}<br/>{{needCostFormat(need.cost)}}<br/>(x{{need.quantity}})
+        </a>
+
+        <div class="add-to-cart-button" *ngIf="quantity_exceeds_bundle_limit(need);" style="text-decoration: line-through; opacity: 0.50;">Add to Cart</div>
+        <div class="add-to-cart-button" *ngIf="!quantity_exceeds_bundle_limit(need);" (click)="this.add_to_funding_basket(need);">Add to Cart</div>
+      </ng-template>
+    </div>
+  </div>
+</div>
+
+<div style="border-style:none; padding:2%">
+  <h2 style="color:var(--c_text);">Your Funding Basket<br><br></h2>
+  <div *ngIf="(needBundles.length == 0)">
+    <p style="color:var(--c_text);">Your funding basket is empty.<br>Add items from your recommendations above or the search tool below.</p>
+  </div>
+  <div *ngIf="needBundles.length > 0">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <div class="proceed-to-checkout-button" style="order:0" (click)="open_checkout_panel();">Checkout &nbsp;&nbsp;&nbsp;&nbsp;🛒</div>
+      <ul style="list-style: none; padding: 0;">
+        <li *ngFor="let bundle of needBundles; let i = index">
+          <span
+            class="header-button"
+            style="
+              color:var(--c_text);
+              padding-right:16rem;
+              display:flex;
+              align-items: center;
+              justify-content: left;
+              .remove-icon:hover {opacity: 1.00};
+              "
+            (click)="this.remove_from_funding_basket(i);"
+            >
+            <h2 style="padding-left:100%; padding-left:0%; order:3">{{bundle.get_need_template().name}} (x{{bundle.get_count()}})</h2>
+            <div class="remove-icon" style="flex: 0 0 auto; order:1">✖</div>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div style="background-color:var(--c_bg_alt); padding: 2%">
+  <app-need-search [parent]="this"></app-need-search>
+</div>
+<div><br style="line-height: 25dvh;"></div>

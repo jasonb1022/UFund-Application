@@ -1,0 +1,57 @@
+.help-icon {
+
+    border-radius : 50%;
+    height: 36px;
+    width: 36px;
+
+    background: rgba(0,0,0,0.00);
+    border: 2px ridge var(--c_button_edge);
+
+    text-align: center;
+    offset-position: 0px 32px;
+    line-height: 36px;
+    font-size: 24px;
+    user-select: none;
+
+    scale:1.00;
+    transition: 0.30s;
+
+    display:inline-block;
+
+    pointer-events: visible;
+
+    }
+
+.help-icon:hover {
+
+    line-height: 32px;
+    scale:1.05;
+    transition: 0.10s;
+
+}
+
+
+.help-icon[data-title]:hover:after {
+
+    text-align: left;
+
+    position: absolute;
+    content: attr(data-title);
+    display: inline-block;
+    /*display:none;*/
+
+    pointer-events: none;
+
+    width : 1000px;
+    white-space: pre-line;
+
+    padding: 5px;
+    margin: 45px 20px;
+    background-color: var(--c_button_face);
+    color: var(--c_text);
+
+    border: 2px solid var(--c_button_edge);
+
+    border-radius: 8px;
+
+    }

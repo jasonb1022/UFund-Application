@@ -1,0 +1,17 @@
+<html>
+  
+  <app-dark-mode style="float: right"></app-dark-mode>
+
+  <div style="user-select:none; padding:2%;">
+    <h1 style="text-align:left; opacity:2; color:var(--c_need); text-shadow: 0 0 8px var(--c_shadow);">{{title}}<br/></h1>
+    <nav *ngIf="is_logged_in();">
+      <div>
+        <a class="header-button" routerLink="/dashboard">Dashboard</a>
+        <a class="header-button" routerLink="/needs" *ngIf="is_admin();">Edit Needs</a>
+        <a class="header-button" routerLink="/login" (click)="logout()">Log Out</a>
+      </div>
+    </nav>
+  </div>
+  <router-outlet></router-outlet>
+
+</html>

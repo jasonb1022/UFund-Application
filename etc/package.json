@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "ts-priority-queue": "^0.1.1"
+  }
+}

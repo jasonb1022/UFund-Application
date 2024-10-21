@@ -1,0 +1,24 @@
+<div class="overlay-background" *ngIf="displayCheckout">
+   <div class="overlay-panel" style="display: grid;">
+      <h2 style="color:var(--c_text)"><br/>Checkout</h2>
+      <div (click)="close_checkout_panel();" class="overlay-close-button" style="flex: 0 0 auto; order:0">✖</div>
+      <div class="overlay-cart-items-display">
+         <div *ngFor="let bundle of parent.needBundles; let i = index" class="overlay-cart-item">
+            <h2 *ngIf="(i % 2)==0" style="color:var(--c_text)">
+               {{i+1}}.&nbsp;&nbsp;&nbsp;&nbsp;
+               {{bundle.get_count()}}x
+               {{bundle.get_need_template().name}}
+               ({{bundle.get_cost_formatted()}})
+            </h2>
+            <h2 *ngIf="(i % 2)==1" style="color:var(--c_text_alt)">
+               {{i+1}}.&nbsp;&nbsp;&nbsp;&nbsp;
+               {{bundle.get_count()}}x
+               {{bundle.get_need_template().name}}
+               ({{bundle.get_cost_formatted()}})
+            </h2>
+         </div>
+      </div>
+      <h2 class="overlay-total-cost">Total: {{parent.get_total_cost()}}</h2>
+      <div class="confirmation-button" (click)="confirm_checkout();">Confirm Checkout ✅</div>
+   </div>
+</div>

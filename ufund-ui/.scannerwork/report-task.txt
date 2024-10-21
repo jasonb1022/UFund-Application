@@ -1,0 +1,6 @@
+projectKey=needs-app
+serverUrl=http://localhost:9000
+serverVersion=10.4.1.88267
+dashboardUrl=http://localhost:9000/dashboard?id=needs-app
+ceTaskId=dc822a63-280d-4ea8-9ae4-901d9a182b05
+ceTaskUrl=http://localhost:9000/api/ce/task?id=dc822a63-280d-4ea8-9ae4-901d9a182b05

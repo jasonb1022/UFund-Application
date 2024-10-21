@@ -1,0 +1,197 @@
+/* DashboardComponent's private CSS styles */
+
+body {    
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {   /*<- Can do this to target all heading tags at once*/
+  text-align: center;
+}
+h2 {
+  text-align: center;
+  color:var(--c_text);
+  font-weight: bold;
+  font-size: 2.0rem;
+  }
+  
+.needs-menu {
+
+  user-select: none;
+
+  padding: 0;
+  margin: auto;
+  max-width: 50%;
+
+  /* flexbox */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: center;
+  justify-content: space-around;
+  align-content: flex-start;
+  align-items: flex-start;
+
+}
+
+.needs-menu > div {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  }
+  
+a {
+
+  background-color: #3f525c;
+  border-radius: 2px;
+  padding: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  min-width: 70px;
+  margin: 1.0rem auto;
+  box-sizing: border-box;
+
+  /* flexbox */
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+
+  white-space: pre-line;
+
+}
+  
+@media (min-width: 600px) {
+
+  a {
+    width: 18%;
+    box-sizing: content-box;
+  }
+
+}
+  
+a:hover {
+  background-color: #000;
+}
+
+.add-to-cart-button {
+
+  background-color: var(--c_button_face);
+
+  border-radius: 8px;
+  padding: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  font-size: 1.10rem;
+  font-weight: bold;
+
+  text-decoration: none;
+  text-align: center;
+
+  display: inline-block;
+  color: var(--c_text);
+  
+  
+  margin:0rem 0rem;
+  box-sizing: border-box;
+
+  /* flexbox */
+  order: 1;
+  flex: 0 1 auto;
+  align-self: center;
+
+  scale:1.00;
+  opacity:0.80;
+  transition: 0.50s;
+
+  }
+.add-to-cart-button:hover {
+
+  scale: 1.10;
+  opacity: 1.00;
+  transition: 0.15s;
+  
+  cursor: pointer;
+
+  }
+
+
+
+.refresh-recommended {
+
+  background-color: var(--c_button_face);
+
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  display: inline-block;
+  color: var(--c_text);
+  text-align: center;
+  margin: 0.1rem 0.1rem;
+  box-sizing: border-box;
+
+  /* flexbox */
+  order: 1;
+  flex: 1 2 auto;
+  align-self: center;
+
+  scale:1.00;
+  opacity:0.80;
+  transition: 0.50s;
+
+  }
+.refresh-recommended:hover {
+
+    scale: 1.10;
+    opacity: 1.00;
+    transition: 0.15s;
+    
+    cursor: pointer;
+  
+    }
+
+.remove-icon {
+
+  background-color: var(--c_button_face);
+
+  border-radius: 50%;
+  font-size: 2.0rem;
+  text-decoration: none;
+  display: inline-flex;
+  color: var(--c_text);
+  text-align: center;
+  box-sizing: border-box;
+  width: 3rem;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+
+  /* flexbox */
+  order: 1;
+  flex: 1 2 auto;
+  align-self: center;
+
+  opacity:0.40;
+
+  mix-blend-mode:overlay;
+
+  margin-right: 1.0rem;
+
+  }
+
+.header-button:hover .remove-icon {
+
+    opacity:1.00;
+    
+    cursor: pointer;
+  
+    }

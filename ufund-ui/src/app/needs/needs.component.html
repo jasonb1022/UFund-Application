@@ -1,0 +1,22 @@
+<div style="background-color:var(--c_bg_alt);">
+  <h2 style="color:var(--c_text)">Available Needs</h2>
+  <ul class="needs">
+    <li *ngFor="let need of needs">
+      <a routerLink="/detail/{{need.id}}">
+        <span class="badge">${{need.cost}} (ID-{{need.id}})</span> {{need.name}} &nbsp;&nbsp;(x{{need.quantity}})
+      </a>
+      <button type="button" class="delete" title="delete need"
+        (click)="delete(need)">x</button>
+    </li>
+  </ul>
+</div>
+
+<div>
+  <label for="new-need" style="color:var(--c_text);">New Need name: </label>
+  <input id="new-need" #needName />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button type="button" class="add-button" (click)="add(needName.value); needName.value=''">
+    Create New Need
+  </button>
+</div>

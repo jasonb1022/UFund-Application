@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+
+.header-button {
+
+  background-color: var(--c_button_face);
+
+  border-radius: 32px;
+  padding: 1rem;
+
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 1.10rem;
+  font-weight: bold;
+
+  text-decoration: none;
+  text-align: center;
+
+  width: auto;
+  margin: 0.40rem 0.20rem;
+
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  color: var(--c_text);
+
+  scale:1.00;
+  opacity:0.80;
+  transition: 0.15s;
+
+  }
+.header-button:hover {
+
+  background-color: var(--c_button_face);
+  scale: 1.05;
+  opacity: 1.00;
+  transition: 0.05s;
+  
+  cursor: pointer;
+
+  }

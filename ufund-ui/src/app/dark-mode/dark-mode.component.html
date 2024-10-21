@@ -1,0 +1,12 @@
+<html>
+
+<body>
+    <div class="button-edge">
+    <button class="button-behind" (click)="updateDarkMode(useDarkMode)">
+        <div *ngIf='useDarkMode' class="button">☀️</div>
+        <div *ngIf='!useDarkMode' class="button">🌙</div>
+    </button>
+    </div>
+</body>
+
+</html>
